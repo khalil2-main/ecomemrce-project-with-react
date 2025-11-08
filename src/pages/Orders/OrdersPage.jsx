@@ -3,7 +3,7 @@ import '../header.css'
 
 export function OrdersPage(){
   return <>
-    <title>order</title>
+    <title>orders</title>
   
       <div className="header">
       <div className="left-section">
