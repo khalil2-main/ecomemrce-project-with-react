@@ -2,25 +2,19 @@
 import axios from 'axios'
 
 import './homePage.css'
-import { ProductContainer } from '../../components/header/product-container/PoductContainer'
+import { ProductContainer } from '../../components/product-container/PoductContainer.jsx'
 import { Header } from '../../components/header/header.jsx'
 import { useEffect, useState } from 'react'
 
-export function HomePage(){
+export function HomePage({cart}){
  const [products,setProducts]= useState([]);
-  const [cart,setCart]=useState([]);
   useEffect(()=>{
     axios.get('/api/products').then((res)=>{
       setProducts(res.data);
   
     })   
   },[])
-  //cart items
-  useEffect(()=>{
-    axios.get('/api/cart-items').then((res=>{
-      setCart(res.data);
-    }))
-  },[])
+  
   return<>
   <title>Ecomorce project</title>
    
