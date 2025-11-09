@@ -1,3 +1,5 @@
+import { formatPrice } from "../../utils/money";
+
  export function ProductContainer({product}){
   return <>
     <div key={product.id} className="product-container">
@@ -19,7 +21,7 @@
           </div>
 
           <div className="product-price">
-            {(product.priceCents/100).toFixed(2)}
+           $ {formatPrice(product.priceCents)}
           </div>
 
           <div className="product-quantity-container">
